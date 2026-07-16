@@ -1,8 +1,10 @@
-**AI Personal Assistant (ITER Student Project)**
+**TASK 1 · Voice Assistant**
 
 This project is a Python-based voice-controlled personal assistant designed to manage daily tasks, provide information, and improve productivity through automation.
 
+
 **Features**
+
 
 *Core Tasks*
 
@@ -22,6 +24,7 @@ Email Automation: Sends emails via voice command using smtplib.
 
 Timed Reminders: Triggers audible alerts after a specified duration using multi-threading.
 
+
 **Additional Enhancements**
 
 Voice Modulation: Ability to switch between available voice profiles.
@@ -29,6 +32,7 @@ Voice Modulation: Ability to switch between available voice profiles.
 Speech Speed Control: Dynamically adjusts the assistant's speaking rate.
 
 Background Execution: Uses threading to ensure the assistant remains responsive while timers or reminders are running.
+
 
 **Privacy & Data Processing**
 
@@ -38,6 +42,7 @@ Data Handling: No user interaction data or personal information is stored on ext
 
 Security: API keys and email credentials are handled via environment variables (or local configuration) to ensure user privacy and code security.
 
+
 **Requirements**
 
 Python 3.x
@@ -45,6 +50,7 @@ Python 3.x
 Required libraries: speech_recognition, pyttsx3, requests, wolframalpha, smtplib.
 
 **How to Run**
+
 
 Clone the repository.
 
