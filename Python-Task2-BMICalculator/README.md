@@ -1,6 +1,6 @@
-# 🚀 BMI Calculator Pro
+#  BMI Calculator Pro
 
-### ✨ Features
+###  Features
 
 **Modern UI**: Built with `customtkinter` for a clean and professional interface.
 
@@ -14,7 +14,7 @@
 
 ---
 
-### 🛠️ Tech Stack
+###  Tech Stack
 
 **Language**: Python 3.x
 
@@ -26,7 +26,7 @@
 
 ---
 
-### 🚀 How to Run
+###  How to Run
 
 1. **Clone the repository**:
 `git clone https://github.com/your-username/bmi-calculator-pro.git`
@@ -39,7 +39,7 @@
 
 ---
 
-### 📝 Usage
+###  Usage
 
 1. Enter your **Name**, **Weight (kg)**, and **Height (cm)** in the respective fields.
 
@@ -49,4 +49,4 @@
 
 ---
 
-<span style="font-size:18px">**Note**: Made by Lavanya Trivedi.</span>
+<span style="font-size:18px">Developed by Lavanya Trivedi</span>
