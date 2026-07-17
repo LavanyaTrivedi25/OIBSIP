@@ -1,61 +1,67 @@
-**TASK 1 · Voice Assistant**
+#  Voice Assistant
 
-This project is a Python-based voice-controlled personal assistant designed to manage daily tasks, provide information, and improve productivity through automation.
+###  Features
 
+**Voice Recognition**: Captures user input using `speech_recognition` via your microphone.
 
-**Features**
+**Natural Language Interaction**: Responds naturally with text-to-speech using `pyttsx3`.
 
+**Web Search**: Automatically redirects queries to Google for broad information retrieval.
 
-*Core Tasks*
+**Time & Date**: Provides accurate real-time updates upon request.
 
-Voice Recognition: Captures user input using speech_recognition via microphone.
+**Live Weather**: Fetches precise weather updates using the OpenWeatherMap API.
 
-Natural Language Interaction: Responds with text-to-speech using pyttsx3.
+**General Knowledge**: Answers factual questions using the WolframAlpha Computational Knowledge Engine.
 
-Web Search: Redirects queries to Google for broad information retrieval.
+**Email Automation**: Effortlessly sends emails via voice command using `smtplib`.
 
-Time & Date: Provides real-time updates upon request.
+**Timed Reminders**: Triggers audible alerts after a specified duration using multi-threading.
 
-Live Weather: Fetches weather updates using the OpenWeatherMap API.
+---
 
-General Knowledge: Answers factual questions using the WolframAlpha Computational Knowledge Engine.
+###  Additional Enhancements
 
-Email Automation: Sends emails via voice command using smtplib.
+**Voice Modulation**: Ability to switch between available voice profiles.
 
-Timed Reminders: Triggers audible alerts after a specified duration using multi-threading.
+**Speech Speed Control**: Dynamically adjusts the assistant's speaking rate.
 
+**Background Execution**: Uses `threading` to ensure the assistant remains responsive while timers or reminders are running.
 
-**Additional Enhancements**
+---
 
-Voice Modulation: Ability to switch between available voice profiles.
+###  Privacy & Data Processing
 
-Speech Speed Control: Dynamically adjusts the assistant's speaking rate.
+**Local Processing**: Audio input is processed locally by the speech recognition engine.
 
-Background Execution: Uses threading to ensure the assistant remains responsive while timers or reminders are running.
+**Data Handling**: No user interaction data or personal information is stored on external servers or databases.
 
+**Security**: API keys and email credentials are handled via environment variables (or local configuration) to ensure user privacy and code security.
 
-**Privacy & Data Processing**
+---
 
-Local Processing: Audio input is processed locally by the speech_recognition engine.
+###  Tech Stack
 
-Data Handling: No user interaction data or personal information is stored on external servers or databases.
+**Language**: Python 3.x
 
-Security: API keys and email credentials are handled via environment variables (or local configuration) to ensure user privacy and code security.
+**Required Libraries**: `speech_recognition`, `pyttsx3`, `requests`, `wolframalpha`, `smtplib`
 
+---
 
-**Requirements**
+###  How to Run
 
-Python 3.x
+1. **Clone the repository**:
+`git clone https://github.com/your-username/voice-assistant.git`
 
-Required libraries: speech_recognition, pyttsx3, requests, wolframalpha, smtplib.
+2. **Install dependencies**:
+`pip install -r requirements.txt`
 
-**How to Run**
+3. **Configure API Keys**:
+Set up your personal API keys for **OpenWeatherMap** and **WolframAlpha**.
 
+4. **Launch the assistant**:
+`python main.py`
 
-Clone the repository.
+---
 
-Install dependencies: pip install -r requirements.txt (or install manually).
-
-Set up your API keys for OpenWeatherMap and WolframAlpha.
-
-Run the main script: python main.py
+<span style="font-size:18px">Developed by Lavanya Trivedi</span>
