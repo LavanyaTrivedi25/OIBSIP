@@ -1,11 +1,11 @@
-# 🚀 BMI Calculator Pro
+#  BMI Calculator Pro
 
-### 📖 About the Project
+###  About the Project
 **BMI Calculator Pro** is a modern and efficient desktop application built with Python using `customtkinter`. This tool not only calculates your Body Mass Index (BMI) but also saves your records to provide a graphical analysis of your health journey over time.
 
 ---
 
-### ✨ Key Features
+###  Key Features
 
 **Modern UI/UX**: Designed with the `customtkinter` framework for a sleek and visually appealing interface.
 
@@ -21,7 +21,7 @@
 
 ---
 
-### 🛠️ Tech Stack
+###  Tech Stack
 
 **Programming Language**: Python 3.x
 
@@ -33,7 +33,7 @@
 
 ---
 
-### 🚀 How to Run
+###  How to Run
 
 1. **Clone the repository**:
 `git clone https://github.com/your-username/bmi-calculator-pro.git`
@@ -46,7 +46,7 @@
 
 ---
 
-### 📝 Usage Guide
+###  Usage Guide
 
 1. **Input Data**: Launch the application and enter your **Name**, **Weight (kg)**, and **Height (cm)**.
 
@@ -56,7 +56,7 @@
 
 ---
 
-### 🛡️ Privacy & Data
+###  Privacy & Data
 *   **Local Storage**: All your data is saved locally on your computer in a `.csv` file.
 *   **Security**: No external servers or databases are used, ensuring your data remains fully private.
 
