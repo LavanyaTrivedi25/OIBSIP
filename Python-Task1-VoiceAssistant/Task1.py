@@ -1,7 +1,7 @@
-import speech_recognition as sr
-import pyttsx3 as pt
+import speech_recognition as sp
 import datetime
 import webbrowser
+import pyttsx3 as pt
 import requests
 import smtplib
 import threading
@@ -14,7 +14,7 @@ WOLFRAM_APP_ID = "6KH36XY9QG"
 MY_EMAIL = "lavanyatrivedi25@gmail.com"
 MY_PASSWORD = "cmpq avey gpiy aful"
 
-wolfram_client = wolframalpha.Client(WOLFRAM_APP_ID)
+ask_wolfram = wolframalpha.Client(WOLFRAM_APP_ID)
 
 engine = pt.init()
 voices = engine.getProperty('voices')
@@ -31,13 +31,13 @@ def speak(text):
         pass
 
 def listen():
-    rec = sr.Recognizer()
-    with sr.Microphone() as source:
+    rec = sp.Recognizer()
+    with sp.Microphone() as source:
         print("Speak now. I am Listening...")
         rec.adjust_for_ambient_noise(source, duration=0.5)
         try:
             audio = rec.listen(source, timeout=30, phrase_time_limit=5)
-        except sr.WaitTimeoutError:
+        except sp.WaitTimeoutError:
             return "none"
     try:
         query = rec.recognize_google(audio, language='en-in')
@@ -47,23 +47,23 @@ def listen():
 
 def get_qa_answer(query):
     try:
-        res = wolfram_client.query(query)
+        res = ask_wolfram.query(query)
         ans = next(res.results).text
         return ans
     except:
-        return "I couldn't find an answer in my knowledge base."
+        return "Sorry, I couldn't find an answer."
 
 def get_weather(city):
     url = f"http://api.openweathermap.org/data/2.5/forecast?q={city},IN&appid={API_KEY}&units=metric"
     try:
-        response = requests.get(url).json()
-        if response.get("cod") == "200":
-            temp = response["list"][0]["main"]["temp"]
-            desc = response["list"][0]["weather"][0]["description"]
+        resp = requests.get(url).json()
+        if resp.get("cod") == "200":
+            temp = resp["list"][0]["main"]["temp"]
+            desc = resp["list"][0]["weather"][0]["description"]
             return f"Currently in {city}, it is {desc} at {temp} degrees."
-        return "Unable to fetch weather."
+        return "Unable to fetch weather information."
     except:
-        return "Weather service unreachable."
+        return "Weather service not reachable."
 
 def send_email(to, subject, content, sender_name):
     server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -80,7 +80,8 @@ def set_reminder(seconds, message):
     threading.Thread(target=reminder_thread).start()
 
 def main():
-    global current_voice_index, current_rate
+    global current_voice_index
+    global current_rate
     speak("Hello! I am your personal assistant.")
     speak("You can ask me about the time, weather, general knowledge, set reminders, or even send emails.")
     
@@ -97,23 +98,33 @@ def main():
             if city != "none": speak(get_weather(city))
             
         elif 'what is' in query or 'who is' in query or 'calculate' in query:
-            speak("Searching my knowledge base...")
+            speak("Searching....")
             speak(get_qa_answer(query))
         
-        # Ensure this block is in your main logic chain
-        elif 'send email' in query or 'email' in query:
+        elif 'send email' in query or 'email' in query or 'draft an email' in query or 'write an email' in query or 'send an email to' in query:
             try:
-                speak("What should be the subject?")
+                speak("What is the subject of the email?")
                 subject = listen()
-                speak("What should I say?")
+                speak("What is the body of the email? (Please give a detailed message)")
                 content = listen()
-                speak("To whom should I send this?")
+                speak("Whom should I send this email to?")
                 recipient = listen()
-                
-                # Yahan recipient ke hisaab se email ID mapping ka use karein
-                # Jaise: target_email = contacts[recipient]
-                
-                send_email(target_email, subject, content, "Assistant")
+                contacts = {
+                    'lavanya': 'lavanyatrivedi25@gmail.com',
+                    'me': MY_EMAIL,
+                }
+
+                Tmail = None
+                if recipient and '@' in recipient:
+                    Tmail = recipient
+                else:
+                    key = recipient.replace("@", "").strip().lower()
+                    Tmail = contacts.get(key)
+
+                if not Tmail:
+                    speak("I don't have an email address for that recipient.")
+                else:
+                    send_email(Tmail, subject, content, "Assistant")
                 speak("Email has been sent successfully.")
             except Exception as e:
                 speak("I am sorry, I was unable to send the email.")
@@ -129,11 +140,11 @@ def main():
                 speak(f"Reminder set for {val} minutes.")
             except: speak("Invalid time format.")
 
-        elif 'exit' in query or 'stop' in query:
+        elif 'exit' in query or 'stop' in query or 'quit' in query or 'bye' in query:
             speak("Okay, Bye! See you next time.")
             break
         else:
-            speak("Searching on Google.")
+            speak("Please wait while I search the web.")
             webbrowser.open(f"https://www.google.com/search?q={query}")
 
 if __name__ == "__main__":
