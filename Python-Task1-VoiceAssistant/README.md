@@ -2,7 +2,7 @@
 
 ### Features 
 
-**Voice Recognition: This voice assistant listens to you through your computer mic. It does so using something called `speech_recognition`. The voice assistant hears what you say. Then it does something with that information.
+Voice Recognition: This voice assistant listens to you through your computer mic. It does so using something called `speech_recognition`. The voice assistant hears what you say. Then it does something with that information.
 
 Natural Language Interaction The voice assistant replies to you in a human-like way. It uses `pyttsx3` to convert text into speech. The voice assistant says things to you. You can hear it.
 
@@ -54,4 +54,4 @@ Required Libraries: The voice assistant needs libraries like `speech_recognition
 
 ---
 
-<span style="font-size:19px">By Lavanya Trivedi</span>
+<span style="font-size:19px">Developed by Lavanya Trivedi</span>
