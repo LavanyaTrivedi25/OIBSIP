@@ -22,9 +22,9 @@ A command-line voice assistant built in Python that utilizes speech recognition,
 
 ---
 
-## 🚀 Setup & Installation
+## Setup & Installation
 
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/LavanyaTrivedi25/OIBSIP.git
-cd Python-Task1-VoiceAssistant
+   cd Python-Task1-VoiceAssistant
