@@ -1,4 +1,4 @@
-# Real-Time Chat Application (Task 5)
+# Chat Application (Task 5)
 
 A full-stack, real-time desktop chat application featuring user authentication, multi-room chat support, persistent message history using SQLite, text-to-emoji shortcuts, and live notifications. The architecture is split into a Flask-SocketIO backend server and a `tkinter`-based desktop client.
 
